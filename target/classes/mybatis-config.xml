@@ -5,5 +5,6 @@
 <configuration>
 	<typeAliases>
 		<typeAlias alias="post" type="com.young.eun.post.PostVO"></typeAlias>
+		<typeAlias alias="login" type="com.young.eun.login.loginVO"></typeAlias>
 	</typeAliases>
 </configuration>
