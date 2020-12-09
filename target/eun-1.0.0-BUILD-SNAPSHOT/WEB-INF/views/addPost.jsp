@@ -5,12 +5,13 @@
 <head>
 <meta charset="UTF-8">
 <title>addPost</title>
+
 </head>
 <body>
 
 	<h1>Add New Post</h1>
-	<form action="addOk" method="get" onsubmit="return check()">
-		<input type="hidden" name="magam" />
+	<form action="addOk" method="get" onsubmit="check()">
+
 		<table>
 			<tr>
 				<td>goalM:</td>
@@ -26,7 +27,7 @@
 			</tr>
 			<tr>
 				<td>magam:</td>
-				<td><input type="datetime-local" name="temptime" /></td>
+				<td><input type="datetime-local" name="stringDate" /></td>
 			</tr>
 			<tr>
 				<td>Content:</td>
@@ -38,12 +39,8 @@
 			</tr>
 		</table>
 	</form>
+	
+
 </body>
-<script>
-	function check(){
-		System.out.println("herehrehrekrjeklsajkldfj");
-		document.getElementByName("magam")[0].value=java.sql.Date.valueOf(document.getElementByName("temptime")[0].value);
-		return true;
-	}
-</script>
+
 </html>

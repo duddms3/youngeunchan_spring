@@ -8,7 +8,6 @@ public class PostVO {
 	private int currentM;
 	private int priceM;
 	private String title;
-	private String writer;
 	private int userid;
 	private String content;
 	private Date magam;
@@ -44,12 +43,6 @@ public class PostVO {
 	}
 	public void setTitle(String title) {
 		this.title = title;
-	}
-	public String getWriter() {
-		return writer;
-	}
-	public void setWriter(String writer) {
-		this.writer = writer;
 	}
 	public int getUserid() {
 		return userid;
