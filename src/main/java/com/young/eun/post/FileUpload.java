@@ -17,7 +17,7 @@ public class FileUpload {
 		int sizeLimit = 15 * 1024 * 1024;  // 파일크기 (15MB)
 		
 		// 실제로 서버에 저장되는 path를 upload로 정한다.
-		String realPath = request.getSession().getServletContext().getRealPath("upload");
+		String realPath = request.getSession().getServletContext().getRealPath("/resources/img/");
 		//System.out.println(realPath);
 		
 		// 	혹시 저장될 경로가 없으면 생성한다.

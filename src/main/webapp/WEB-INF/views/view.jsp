@@ -37,7 +37,7 @@
 		<tr>
 			<td>photo:</td>
 			<td><img
-				src="${pageContext.request.contextPath}/upload/${u.getPhoto()}"
+				src="${pageContext.request.contextPath}/resources/img/${u.getPhoto()}"
 				height="150px"></td>
 		</tr>
 	</table>

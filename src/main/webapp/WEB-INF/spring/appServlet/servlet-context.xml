@@ -23,6 +23,7 @@
 	</beans:bean>
 	
 	<context:component-scan base-package="com.young.eun" />
+	
 	<beans:bean id="LoginCheckInterceptor" class="com.young.eun.login.loginInterceptor">
 	</beans:bean>
 	<interceptors>
