@@ -12,13 +12,31 @@ public class PostServiceImpl implements PostService {
 
 	@Override
 	public void insertPost(PostVO vo) {
-		System.out.println("insertpost imple");
+		System.out.println("postservice imple insertpost");
 		postDAO.insertPost(vo);
 	}
 	
 	@Override
 	public List<PostVO> getPostList() {
-		System.out.println("getPostList imple");
+		System.out.println("postservice imple getPostList");
 		return postDAO.getPostList();
+	}
+
+	@Override
+	public PostVO getPost(int seq) {
+		System.out.println("postservice imple getPost");
+		return postDAO.getPost(seq);
+	}
+
+	@Override
+	public int updatePost(PostVO vo) {
+		System.out.println("postservice imple updatepost");
+		return postDAO.updatePost(vo);
+	}
+
+	@Override
+	public int deletePost(int seq) {
+		System.out.println("postservice imple deletepost");
+		return postDAO.deletePost(seq);
 	}
 }

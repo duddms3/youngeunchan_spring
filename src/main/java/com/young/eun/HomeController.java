@@ -33,7 +33,7 @@ public class HomeController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
-		return "redirect:yechome";
+		return "redirect:post/yechome";
 	}
 	
 }

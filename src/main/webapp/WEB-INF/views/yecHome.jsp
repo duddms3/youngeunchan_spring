@@ -46,7 +46,9 @@
 	<th>Content</th>
 	<th>Regdate</th>
 	<th>magam</th>
+	<th>photo</th>
 	<th>seq</th>
+	<th>view</th>
 </tr>
 <c:forEach items="${list}" var="u">
 	<tr>
@@ -57,7 +59,9 @@
 		<td>${u.content}</td>
 		<td>${u.regdate}</td>
 		<td>${u.magam}</td>
+		<td>${u.photo}</td>
 		<td>${u.seq}</td>
+		<td><a href="view/${u.getSeq()}">view</a></td>
 		
 	</tr>
 </c:forEach>

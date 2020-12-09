@@ -10,7 +10,7 @@
 <body>
 
 	<h1>Add New Post</h1>
-	<form action="addOk" method="get" onsubmit="check()">
+	<form action="addOk" method="post" enctype="multipart/form-data">
 
 		<table>
 			<tr>
@@ -31,7 +31,7 @@
 			</tr>
 			<tr>
 				<td>photo:</td>
-				<td><input type="file" name="photo" /></td>
+				<td><input type="file" name="photo" /></td>s
 			</tr>
 			<tr>
 				<td>Content:</td>
