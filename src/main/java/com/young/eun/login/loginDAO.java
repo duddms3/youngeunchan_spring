@@ -9,7 +9,6 @@ public class loginDAO {
 	@Autowired
 	SqlSessionTemplate sqlSession;
 	public loginVO getLogin(loginVO vo) {
-		System.out.println("dao getlogin");
 		return sqlSession.selectOne("login.getLogin",vo);
 	}
 }

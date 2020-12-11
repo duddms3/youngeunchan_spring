@@ -8,7 +8,6 @@ public class loginServiceimpl {
 	@Autowired
 	loginDAO loginDAO;
 	public loginVO getLogin(loginVO vo) {
-		System.out.println("imple getlogin");
 		return loginDAO.getLogin(vo);
 	}
 }
