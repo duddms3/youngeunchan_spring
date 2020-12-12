@@ -180,6 +180,8 @@ footer {
 						<tr>
 							<br>
 							<br>
+							<br>
+							<br>
 							<td colspan="2"><hr></td>
 						</tr>
 					</div>
