@@ -21,6 +21,7 @@ public class PostDAO {
 	}
 	public PostVO getPost(int seq) {
 		System.out.println("postDAO getpost");
+		sqlSession.update("PostDAO.updateTime", seq);
 		return sqlSession.selectOne("PostDAO.getPost", seq);
 	}
 	public int updatePost(PostVO vo) {

@@ -89,7 +89,18 @@ img {
 </script>
 </head>
 
-<body>
+<body onload="logged()">
+<script>
+function logged(){
+	var userid = document.getElementById("userid").value
+	if(userid != ""){
+		alert(userid);
+		document.getElementById("login_icon").innerHTML= "Welcome " +userid;
+		document.getElementById("login_icon").href = "../login/logout";
+	}
+}
+
+</script>
 
 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
@@ -108,12 +119,13 @@ img {
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="#pro">Projects</a></li>
 					<li><a href="#ct">Contact</a></li>
-					<li><a href="/eun/login/login"><span
-							class="glyphicon glyphicon-log-in"></span> Login</a></li>
+					<li><a href="../login/login" id ="login_icon"><span
+							class="glyphicon glyphicon-log-in" ></span> Login</a></li>
 				</ul>
 			</div>
 		</div>
 	</nav>
+	<input type="hidden" id=userid value="${userid}" />
 	<div class="container-fluid text-center">
 		<div class="row content">
 			<div class="col-sm-2 sidenav">
