@@ -57,8 +57,61 @@ footer {
 	padding: 15px;
 }
 
+
+.fM {
+	font-family: 'Pacifico', cursive;
+}
+
+#thisPic {
+	float: left;
+	height: 300px;
+	margin-left: 90px;
+	margin-right: 30px;
+	margin-top: 40px;
+}
+
+#ftitle {
+	margin-left: 90px;
+	margin-right: 30px;
+	margin-top: 40px;
+	font-size: 300%;
+}
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media ( max-width : 767px) {
+	.sidenav {
+		height: auto;
+		padding: 15px;
+	}
+	.row.content {
+		height: auto;
+	}
+	#thisPic {
+		height: 200px;
+		margin-left: 50px;
+	}
+}
+
+@media ( max-width : 500px) {
+	.sidenav {
+		height: auto;
+		padding: 15px;
+	}
+	.row.content {
+		height: auto;
+	}
+	#thisPic {
+		margin-top: 20px;
+		margin-left: 30px;
+		height: 100px;
+	}
+}
+
 </style>
 </head>
+
+
+
 <body onload="checkTime()">
 	<script>
 		function checkTime() {
@@ -71,6 +124,16 @@ footer {
 				document.getElementById("myBtn").disabled = true;
 				document.getElementById("myBtn").innerHTML = "out of date";
 			}
+
+			var userid = document.getElementById("userid").value
+			if (userid != "") {
+				alert(userid);
+				document.getElementById("toLogout").innerHTML = "Logout";
+				document.getElementById("toLogout").href = "../login/logout";
+				document.getElementById("toWelcome").innerHTML = "Welcome "
+						+ userid;
+			}
+
 		}
 		function increaseCurrent(id) {
 			var regdate = document.getElementById('regdate').value;
@@ -82,8 +145,12 @@ footer {
 		}
 	</script>
 
+
+	<input type="hidden" id=userid value="${userid}" />
 	<input type="hidden" id="magam" value="${u.getMagam()}" />
 	<input type="hidden" id="regdate" value="${u.getRegdate()}" />
+
+
 
 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
@@ -102,7 +169,8 @@ footer {
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="/eun/post/yechome#pro">Projects</a></li>
 					<li><a href="#ft">Contact</a></li>
-					<li><a href="/eun/login/login"><span
+					<li><a href="#" id="toWelcome">Sign Up</a></li>
+					<li><a href="../../login/login" id="toLogout"><span
 							class="glyphicon glyphicon-log-in"></span> Login</a></li>
 				</ul>
 			</div>
@@ -110,67 +178,43 @@ footer {
 	</nav>
 
 
+<p class="fM" id="ftitle">${u.getTitle()}</p>
+	<div id="picContainer">
+		<img id="thisPic"
+			src="${pageContext.request.contextPath}/resources/img/${u.getPhoto()}">
+	</div>
+	<div id="fundingdetail">
+		<br> <br> <br>
+		<p class="fM">
+			목표 후원 금액 :<strong>${u.getGoalM()}</strong>원
+		</p>
 
-	<tr>
+		<p class="fM">
+			현재 모인 금액 :<strong>${u.getCurrentM()}</strong>원
+		</p>
 
-		<td><img
-			src="${pageContext.request.contextPath}/resources/img/${u.getPhoto()}"
-			style="float: left; height: 300px; margin-left: 90px; margin-right: 30px; margin-top: 40px;"></td>
-	</tr>
-	<br>
-	<br>
-	<br>
-
-	<tr>
-		<td>${u.getTitle()}</td>
-	</tr>
-	<br>
-	<br>
-	<br>
-	<tr>
-		<td>목표 후원 금액 :</td>
-		<td>${u.getGoalM()}원</td>
-	</tr>
-	<br>
-	<br>
-	<tr>
-		<td>현재 모인 금액 :</td>
-		<td>${u.getCurrentM()}원</td>
-	</tr>
-	<br>
-	<br>
-
-	<tr>
-		<td>후원 마감 날짜 :</td>
-		<td>${u.getMagam()}</td>
-	</tr>
-	<br>
+		<p class="fM">
+			후원 마감 날짜 :<strong>${u.getMagam()}</strong>
+		</p>
+		<br>
 	<br>
 
 		후원 가격은 " ${u.getPriceM()} "원 입니다. <br> <br>
 			후원하시겠습니까?      
 
 			<button id="myBtn" onclick="increaseCurrent('${u.getSeq()}')"> 후원하기 </button>
+		
+	</div>
 
-	
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<td colspan="2"><hr style="height: 10px;"></td>
-	<br>
-	<br>
-	<br>
+	<hr style="height: 10px;"> <br> <br>
+		<br>
 
-	<div class="detail">
+		<div class="detail">
+			${u.getContent()} <br> <br> <br>
+			
+			<br> <br> <br>
+		</div>
 
-
-
-		<tr>
-			<td>${u.getContent()}</td>
-		</tr>
-			</div>
 		<br> <br> <br>
 		<footer class="container-fluid text-center" id="ft">
 			<p>(주) 영은찬 펀딩.</p>
@@ -178,5 +222,7 @@ footer {
 			<p>-21800123 김영은-</p>
 			
 		</footer>
+	
+
 </body>
 </html>

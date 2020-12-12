@@ -56,8 +56,11 @@ public class PostController {
 	}
 
 	@RequestMapping(value = "/view/{id}", method = RequestMethod.GET)
-	public String viewPost(@PathVariable("id") int id, Model model) {
+	public String viewPost(@PathVariable("id") int id, Model model, HttpSession session) {
 		System.out.println("postcontroller viewpost");
+		Object userid;
+		if ((userid=session.getAttribute("login_userid")) != null)
+			model.addAttribute("userid", userid );
 		model.addAttribute("u", postService.getPost(id));
 		System.out.println("postcontroller viewpost after getpost");
 		return "view";

@@ -74,9 +74,11 @@ footer {
 		height: auto;
 	}
 }
-#pro{
-margin-top: 20px;
+
+#pro {
+	margin-top: 20px;
 }
+
 #adBtn{
 	border-radius:4px;
 	background-color:#F2F5A9;
@@ -84,6 +86,11 @@ margin-top: 20px;
 }
 #adBtn:hover{
 	background-color:#F8E0F7;
+
+}
+#one:hover {
+	cursor: pointer;
+	background-color: gray;
 }
 </style>
 <script>
@@ -97,18 +104,20 @@ margin-top: 20px;
 </head>
 
 <body onload="logged()">
-<script>
-function logged(){
-	var userid = document.getElementById("userid").value
-	if(userid != ""){
-		alert(userid);
-		document.getElementById("login_icon").innerHTML= "Welcome " +userid;
-		document.getElementById("login_icon").href = "../login/logout";
-	}
-}
 
+	<script>
+		function logged() {
+			var userid = document.getElementById("userid").value
+			if (userid != "") {
+				alert(userid);
+				document.getElementById("toLogout").innerHTML = "Logout";
+				document.getElementById("toLogout").href = "../login/logout";
+				document.getElementById("toWelcome").innerHTML = "Welcome "
+						+ userid;
+			}
+		}
+	</script>
 
-</script>
 
 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
@@ -126,9 +135,10 @@ function logged(){
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="#pro">Projects</a></li>
-					<li><a href="#ct">Contact</a></li>
-					<li><a href="../login/login" id ="login_icon"><span
-							class="glyphicon glyphicon-log-in" ></span> Login</a></li>
+					<li><a href="#ft">Contact</a></li>
+					<li><a href="#" id="toWelcome">Sign Up</a></li>
+					<li><a href="../login/login" id="toLogout"><span
+							class="glyphicon glyphicon-log-in"></span> Login</a></li>
 				</ul>
 			</div>
 		</div>
@@ -145,31 +155,36 @@ function logged(){
 			</div>
 
 			<div class="col-sm-8 text-left" id="pro">
-				
-					<c:forEach items="${list}" var="u">
+
+				<c:forEach items="${list}" var="u">
+					<div id="one"
+						onclick="javascript:location.href='view/${u.getSeq()}';">
 						<tr>
 							<td><img
 								src="${pageContext.request.contextPath}/resources/img/${u.getPhoto()}"
 								alt="error in loading the picture"
-								style="float: left; height: 150px; margin-right:20px;"></td>
-						
-							<td>${u.getTitle()}</td><br>
-							<td id="con">${u.content}</td><br>
-							<td>목표 금액 : ${u.goalM}</td><br>
-							<td>마감 날짜 : ${u.magam}</td><br><br>
-						
-						</tr>
-						<tr>
-							<td><a href="view/${u.getSeq()}">자세히 보기</a></td>
+								style="float: left; height: 150px; margin-right: 20px;"></td>
+
+							<td>${u.getTitle()}</td>
+							<br>
+							<td>목표 금액 : ${u.goalM}</td>
+							<br>
+							<td>마감 날짜 : ${u.magam}</td>
+							<br>
+							<br>
+
 						</tr>
 						<tr>
 							<td><a href="javascript:delete_ok('${u.getSeq()}')">Delete</a></td>
 						</tr>
-						<tr><br><br>
+						<tr>
+							<br>
+							<br>
 							<td colspan="2"><hr></td>
 						</tr>
-					</c:forEach>
-				
+					</div>
+				</c:forEach>
+
 			</div>
 		</div>
 	</div>
