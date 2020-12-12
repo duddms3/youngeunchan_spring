@@ -28,11 +28,12 @@
 	</beans:bean>
 	<interceptors>
  	<interceptor>
- 		<mapping path="/**" />
+ 		<mapping path="/fund/**" />
  		<exclude-mapping path="/resources/**" />
  		<exclude-mapping path="/img/**" />
  		<exclude-mapping path="/login/*" />
  		<exclude-mapping path="/post/*" />
+ 		<exclude-mapping path="/" />
  		<beans:ref bean="LoginCheckInterceptor" />
  	</interceptor>
 </interceptors>

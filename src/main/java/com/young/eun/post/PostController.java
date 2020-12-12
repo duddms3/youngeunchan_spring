@@ -3,6 +3,7 @@ package com.young.eun.post;
 import java.text.SimpleDateFormat;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
@@ -27,8 +28,11 @@ public class PostController {
 	}
 
 	@RequestMapping(value = "/yechome", method = RequestMethod.GET)
-	public String yechome(Model model) {
+	public String yechome(Model model, HttpSession session) {
 		System.out.println("postcontroller yechome");
+		Object userid;
+		if ((userid=session.getAttribute("login_userid")) != null)
+			model.addAttribute("userid", userid );
 		model.addAttribute("list", postService.getPostList());
 		System.out.println("postcontroller after getpostlist");
 		return "yecHome";

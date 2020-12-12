@@ -22,6 +22,12 @@
 		where seq=#{seq}
 	</update>
 	
+	<update id="updateTime">
+		update POST
+		set regdate = current_timestamp
+		where seq=#{seq}
+	</update>
+	
 	<delete id="deletePost">
 		delete from POST where seq=#{seq}
 	</delete>
