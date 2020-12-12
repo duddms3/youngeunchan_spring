@@ -16,7 +16,7 @@
 <style>
 /* Remove the navbar's default margin-bottom and rounded borders */
 .navbar-nav {
-	padding-left: 100px;
+	
 	font-family: 'Pacifico', cursive;
 	font-weight: bold;
 	font-size: 20px;
@@ -54,13 +54,12 @@
 /* Set gray background color and 100% height */
 .sidenav {
 	padding-top: 20px;
-	background-color: #f1f1f1;
 	height: 100%;
 }
 
 /* Set black background color, white text and some padding */
 footer {
-	background-color: #555;
+	background-color:#A4A4A4;
 	color: white;
 	padding: 15px;
 }
@@ -78,7 +77,14 @@ footer {
 #pro{
 margin-top: 20px;
 }
-
+#adBtn{
+	border-radius:4px;
+	background-color:#F2F5A9;
+	border:2.5px;
+}
+#adBtn:hover{
+	background-color:#F8E0F7;
+}
 </style>
 <script>
 	function delete_ok(id) {
@@ -86,6 +92,7 @@ margin-top: 20px;
 		if (a)
 			location.href = 'delete/' + id;
 	}
+
 </script>
 </head>
 
@@ -99,6 +106,7 @@ function logged(){
 		document.getElementById("login_icon").href = "../login/logout";
 	}
 }
+
 
 </script>
 
@@ -132,7 +140,8 @@ function logged(){
 	<div class="container-fluid text-center">
 		<div class="row content">
 			<div class="col-sm-2 sidenav">
-				<a href="addPost">후원 아이템 추가하기</a>
+			<button id="adBtn" onclick="location.href='addPost'"> 후원 아이템 추가하기 </button>
+			
 			</div>
 
 			<div class="col-sm-8 text-left" id="pro">
