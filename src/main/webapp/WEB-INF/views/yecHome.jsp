@@ -75,10 +75,10 @@ footer {
 		height: auto;
 	}
 }
-
-img {
-	display: block;
+#pro{
+margin-top: 20px;
 }
+
 </style>
 <script>
 	function delete_ok(id) {
@@ -125,7 +125,11 @@ function logged(){
 			</div>
 		</div>
 	</nav>
+<<<<<<< HEAD
 	<input type="hidden" id=userid value="${userid}" />
+=======
+	
+>>>>>>> 82997362e9abc4fbc941166396bf8d00505e02ba
 	<div class="container-fluid text-center">
 		<div class="row content">
 			<div class="col-sm-2 sidenav">
@@ -133,17 +137,19 @@ function logged(){
 			</div>
 
 			<div class="col-sm-8 text-left" id="pro">
-
-				<table id="list" width="90%">
+				
 					<c:forEach items="${list}" var="u">
 						<tr>
 							<td><img
 								src="${pageContext.request.contextPath}/resources/img/${u.getPhoto()}"
 								alt="error in loading the picture"
-								style="float: left; height: 150px; margin-top: 20px;"></td>
-						</tr>
-						<tr>
-							<td>${u.getTitle()}</td>
+								style="float: left; height: 150px; margin-right:20px;"></td>
+						
+							<td>${u.getTitle()}</td><br>
+							<td id="con">${u.content}</td><br>
+							<td>목표 금액 : ${u.goalM}</td><br>
+							<td>마감 날짜 : ${u.magam}</td><br><br>
+						
 						</tr>
 						<tr>
 							<td><a href="view/${u.getSeq()}">자세히 보기</a></td>
@@ -151,12 +157,11 @@ function logged(){
 						<tr>
 							<td><a href="javascript:delete_ok('${u.getSeq()}')">Delete</a></td>
 						</tr>
-						<tr>
+						<tr><br><br>
 							<td colspan="2"><hr></td>
 						</tr>
 					</c:forEach>
-				</table>
-
+				
 			</div>
 		</div>
 	</div>
