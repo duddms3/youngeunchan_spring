@@ -82,14 +82,7 @@ footer {
 #title:hover,#goalM:hover,#priceM:hover,#magam:hover,#lo:hover{
 	background-color: #edecec;
 }
-#sa,#cnBtn{
-	border-radius:4px;
-	background-color:#F2F5A9;
-	border:2.5px;
-}
-#sa:hover,#cnBtn:hover{
-	background-color:#F8E0F7;
-}
+
 </style>
 </head>
 <body>
@@ -147,10 +140,11 @@ footer {
 				<td>후원 아이템에 대한 설명을 적으세요.</td>
 				<td><textarea cols="50" rows="50" name="content" placeholder="상세 설명을 적으세요" id="lo"></textarea></td>
 			</tr><br><br>
+			
 		</table>
 		
-				<button id="cnBtn" onclick="location.href='yechome'"> 등록 취소하기 </button>
-				<input type="submit" value="게시글 등록하기" id="sa" />
+				<button type="button" class="btn btn-success" onclick="location.href='yechome'">등록 취소하기</button>
+				<input type="submit" value="게시글 등록하기" class="btn btn-success" id="sa" />
 	</form>
 	</div>
 	<br><br><br>
