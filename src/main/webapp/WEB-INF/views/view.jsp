@@ -14,7 +14,6 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <style>
-
 .detail {
 	margin-left: 90px;
 	margin-right: 90px;
@@ -59,7 +58,6 @@ footer {
 	width: 50%;
 	border-radius: 4px;
 }
-
 </style>
 </head>
 <body onload="checkTime()">
@@ -171,22 +169,17 @@ footer {
 		<tr>
 			<td>${u.getContent()}</td>
 		</tr>
-		<br>
-		<br>
-		<br>
+		<br> <br> <br>
 		<footer class="container-fluid text-center" id="ft">
 
-			-후원 단가- <br>
-			<br> ${u.getPriceM()} 원 입니다. <br>
-			<br> 후원하시겠습니까?
+			-후원 단가- <br> <br> ${u.getPriceM()} 원 입니다. <br> <br>
+			후원하시겠습니까?
 
 			<button id="myBtn" onclick="increaseCurrent('${u.getSeq()}')">hoo
 				won</button>
 
 		</footer>
-		<br>
-		<br>
-		<br>
+		<br> <br> <br>
 	</div>
 </body>
 </html>
