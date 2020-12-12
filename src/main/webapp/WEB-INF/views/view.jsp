@@ -14,6 +14,7 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <style>
+
 .detail {
 	margin-left: 90px;
 	margin-right: 90px;
@@ -58,6 +59,7 @@ footer {
 	width: 50%;
 	border-radius: 4px;
 }
+
 </style>
 </head>
 <body onload="checkTime()">
@@ -85,6 +87,7 @@ footer {
 
 	<input type="hidden" id="magam" value="${u.getMagam()}" />
 	<input type="hidden" id="regdate" value="${u.getRegdate()}" />
+
 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -185,6 +188,5 @@ footer {
 		<br>
 		<br>
 	</div>
-
 </body>
 </html>

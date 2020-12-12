@@ -125,7 +125,9 @@ function logged(){
 			</div>
 		</div>
 	</nav>
+
 	<input type="hidden" id=userid value="${userid}" />
+
 
 	<div class="container-fluid text-center">
 		<div class="row content">
