@@ -20,7 +20,7 @@
 }
 
 .navbar-nav {
-	padding-left: 100px;
+
 	font-family: 'Pacifico', cursive;
 	font-weight: bold;
 	font-size: 20px;
@@ -52,12 +52,11 @@
 
 /* Set black background color, white text and some padding */
 footer {
-	background-color: #E6E6E6;
-	color: black;
+	background-color: #A4A4A4;
+	color: white;
 	padding: 15px;
-	width: 50%;
-	border-radius: 4px;
 }
+
 
 .fM {
 	font-family: 'Pacifico', cursive;
@@ -107,6 +106,7 @@ footer {
 		height: 100px;
 	}
 }
+
 </style>
 </head>
 
@@ -178,8 +178,7 @@ footer {
 	</nav>
 
 
-
-	<p class="fM" id="ftitle">${u.getTitle()}</p>
+<p class="fM" id="ftitle">${u.getTitle()}</p>
 	<div id="picContainer">
 		<img id="thisPic"
 			src="${pageContext.request.contextPath}/resources/img/${u.getPhoto()}">
@@ -197,23 +196,33 @@ footer {
 		<p class="fM">
 			후원 마감 날짜 :<strong>${u.getMagam()}</strong>
 		</p>
+		<br>
+	<br>
+
+		후원 가격은 " ${u.getPriceM()} "원 입니다. <br> <br>
+			후원하시겠습니까?      
+
+			<button id="myBtn" onclick="increaseCurrent('${u.getSeq()}')"> 후원하기 </button>
+		
 	</div>
-
-
-	<a href="#pc">후원하기</a>
 
 	<hr style="height: 10px;"> <br> <br>
 		<br>
 
 		<div class="detail">
 			${u.getContent()} <br> <br> <br>
-			<footer class="container-fluid text-center" id="ft">
-				-후원 단가- <br> <br> ${u.getPriceM()} 원 입니다. <br> <br>
-				후원하시겠습니까?
-				<button id="myBtn" onclick="increaseCurrent('${u.getSeq()}')">hoo
-					won</button>
-			</footer>
+			
 			<br> <br> <br>
 		</div>
+
+		<br> <br> <br>
+		<footer class="container-fluid text-center" id="ft">
+			<p>(주) 영은찬 펀딩.</p>
+			<p>-21700287 박은찬-</p>
+			<p>-21800123 김영은-</p>
+			
+		</footer>
+	
+
 </body>
 </html>
