@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <faceted-project>
-  <runtime name="Apache Tomcat v9.0"/>
+  <runtime name="C-_Users_은찬_Desktop_hgu_20-2_실전 프로젝트_tomcat&amp;sts_tomcat_apache-tomcat-9.0.38-windows-x64_apache-tomcat-9.0.38"/>
   <fixed facet="jst.web"/>
   <fixed facet="jst.java"/>
   <installed facet="jst.web" version="4.0"/>
-  <installed facet="jst.java" version="1.8"/>
+  <installed facet="jst.java" version="14"/>
 </faceted-project>

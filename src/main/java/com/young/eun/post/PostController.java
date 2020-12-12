@@ -30,7 +30,7 @@ public class PostController {
 	public String yechome(Model model) {
 		System.out.println("postcontroller yechome");
 		model.addAttribute("list", postService.getPostList());
-
+		System.out.println("postcontroller after getpostlist");
 		return "yecHome";
 	}
 
@@ -43,20 +43,6 @@ public class PostController {
 	@RequestMapping(value = "/addOk", method = RequestMethod.POST)
 	public String addOk(HttpServletRequest request) {
 		System.out.println("postcontroller addok");
-		//PostVO vo, @RequestParam("stringDate") String stringDate) {
-	
-		//, HttpServletRequest request
-//		System.out.println("start parsing  " + stringDate);
-//		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
-//		Date date2 = null;
-//		try {
-//			date2 = dateFormat.parse(stringDate);
-//		} catch (ParseException e) {
-//			e.printStackTrace();
-//		}
-//
-//		System.out.println("this is input date2: " + date2);
-//		vo.setMagam(date2);
 		FileUpload fileupload= new FileUpload();
 		PostVO vo= fileupload.uploadPhoto(request);
 		System.out.println("maybe success?");
@@ -73,5 +59,11 @@ public class PostController {
 		return "view";
 	}
 	
-
-}
+	@RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
+	public String deletePost(@PathVariable("id") int id) {
+		System.out.println("postcontroller delete post");
+		postService.deletePost(id);
+		System.out.println("postcontroller viewpost after deletepost");
+		return "redirect:../yechome";
+	}
+}//end of class

@@ -15,7 +15,6 @@ public class PostDAO {
 		System.out.println("postDAO insertpost");
 		sqlSession.insert("PostDAO.insertPost", vo);
 	}
-	
 	public List<PostVO> getPostList(){
 		System.out.println("postDAO getPostList");
 		return sqlSession.selectList("PostDAO.getPostList");

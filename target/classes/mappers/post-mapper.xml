@@ -16,12 +16,16 @@
 	<update id="updatePost">
 		update POST
 		set goalM=#{goalM}, priceM=#{priceM},
-		title=#{title}, content=#{content}, magam=#{magam}, photo=#{photo}
+		currentM=#{currentM},
+		title=#{title}, content=#{content},
+		magam=#{magam}, photo=#{photo}
 		where seq=#{seq}
 	</update>
+	
 	<delete id="deletePost">
 		delete from POST where seq=#{seq}
 	</delete>
+	
 	<select id="getPost" resultType="post">
 		select * from POST where
 		seq=#{seq}
