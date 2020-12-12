@@ -14,10 +14,11 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <style>
-.detail{
-	margin-left:90px;
-	margin-right:90px;
+.detail {
+	margin-left: 90px;
+	margin-right: 90px;
 }
+
 .navbar-nav {
 	padding-left: 100px;
 	font-family: 'Pacifico', cursive;
@@ -54,10 +55,9 @@ footer {
 	background-color: #E6E6E6;
 	color: black;
 	padding: 15px;
-	width:50%;
-	border-radius:4px;
+	width: 50%;
+	border-radius: 4px;
 }
-
 </style>
 </head>
 <body onload="checkTime()">
@@ -68,7 +68,7 @@ footer {
 			var regdate = document.getElementById('regdate').value;
 			regdate = regdate.substring(4);
 			alert(regdate + " === " + magam);
-			if(magam<regdate){
+			if (magam < regdate) {
 				document.getElementById("myBtn").disabled = true;
 				document.getElementById("myBtn").innerHTML = "out of date";
 			}
@@ -77,17 +77,14 @@ footer {
 			var regdate = document.getElementById('regdate').value;
 			var magam = document.getElementById('magam').value;
 			var a = confirm("정말로 후원하시겟습니까? regdate" + regdate + " ---- "
-					+ magam+ "======" + id);
+					+ magam + "======" + id);
 			if (a)
 				location.href = '../../fund/addFund/' + id;
 		}
 	</script>
-<<<<<<< HEAD
-	<h1>view-update46</h1>
+
 	<input type="hidden" id="magam" value="${u.getMagam()}" />
 	<input type="hidden" id="regdate" value="${u.getRegdate()}" />
-	<table>
-=======
 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -111,74 +108,83 @@ footer {
 			</div>
 		</div>
 	</nav>
-	
-	
-	
-	<tr>
-			
-			<td><img
-				src="${pageContext.request.contextPath}/resources/img/${u.getPhoto()}"
-				style="float:left; height:300px; margin-left:90px;margin-right:30px; margin-top:40px;"></td>
-		</tr><br><br><br>
->>>>>>> 82997362e9abc4fbc941166396bf8d00505e02ba
-		<tr>
-			<td>${u.getTitle()}</td>
-		</tr><br><br><br>
-		<tr>
-			<td>목표 후원 금액 : </td>
-			<td>${u.getGoalM()} 원</td>
-		</tr><br><br>
-		<tr>
-			<td>현재 모인 금액 : </td>
-			<td>${u.getCurrentM()} 원</td>
-		</tr><br><br>
-		
-		<tr>
-			<td>후원 마감 날짜 : </td>
-			<td>${u.getMagam()}</td>
-		</tr><br><br>
-		
-		<tr>
-<<<<<<< HEAD
-			<td>regdate:</td>
-			<td>${u.getRegdate()}</td>
-		</tr>
-		<tr>
-			<td>photo:</td>
-			<td><img
-				src="${pageContext.request.contextPath}/resources/img/${u.getPhoto()}"
-				height="150px"></td>
-		</tr>
-	</table>
-	<button id="myBtn" onclick="increaseCurrent('${u.getSeq()}')">hoo won</button>
 
-=======
-		
-			<td><a href="#pc">후원하기</a></td>
-		</tr><br><br><br><br><br>
-		<td colspan="2"><hr style="height:10px;"></td>
-		<br><br><br>
-		
-		<div class="detail">
-	
-		
-		
+
+
+	<tr>
+
+		<td><img
+			src="${pageContext.request.contextPath}/resources/img/${u.getPhoto()}"
+			style="float: left; height: 300px; margin-left: 90px; margin-right: 30px; margin-top: 40px;"></td>
+	</tr>
+	<br>
+	<br>
+	<br>
+
+	<tr>
+		<td>${u.getTitle()}</td>
+	</tr>
+	<br>
+	<br>
+	<br>
+	<tr>
+		<td>목표 후원 금액 :</td>
+		<td>${u.getGoalM()}원</td>
+	</tr>
+	<br>
+	<br>
+	<tr>
+		<td>현재 모인 금액 :</td>
+		<td>${u.getCurrentM()}원</td>
+	</tr>
+	<br>
+	<br>
+
+	<tr>
+		<td>후원 마감 날짜 :</td>
+		<td>${u.getMagam()}</td>
+	</tr>
+	<br>
+	<br>
+
+	<tr>
+
+		<td><a href="#pc">후원하기</a></td>
+	</tr>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<td colspan="2"><hr style="height: 10px;"></td>
+	<br>
+	<br>
+	<br>
+
+	<div class="detail">
+
+
+
 		<tr>
 			<td>${u.getContent()}</td>
 		</tr>
-		<br><br><br>
+		<br>
+		<br>
+		<br>
 		<footer class="container-fluid text-center" id="ft">
-		
-			-후원 단가- <br><br>
-			 ${u.getPriceM()} 원 입니다.
-			 <br><br>
-			 후원하시겠습니까? 
-		
-		<a href="javascript:increaseCurrent('${u.getSeq()}')">후원하기</a>
-		
-	</footer>
-	<br><br><br>
+
+			-후원 단가- <br>
+			<br> ${u.getPriceM()} 원 입니다. <br>
+			<br> 후원하시겠습니까?
+
+			<button id="myBtn" onclick="increaseCurrent('${u.getSeq()}')">hoo
+				won</button>
+
+		</footer>
+		<br>
+		<br>
+		<br>
 	</div>
->>>>>>> 82997362e9abc4fbc941166396bf8d00505e02ba
+
 </body>
 </html>

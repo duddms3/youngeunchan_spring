@@ -125,11 +125,8 @@ function logged(){
 			</div>
 		</div>
 	</nav>
-<<<<<<< HEAD
 	<input type="hidden" id=userid value="${userid}" />
-=======
-	
->>>>>>> 82997362e9abc4fbc941166396bf8d00505e02ba
+
 	<div class="container-fluid text-center">
 		<div class="row content">
 			<div class="col-sm-2 sidenav">
