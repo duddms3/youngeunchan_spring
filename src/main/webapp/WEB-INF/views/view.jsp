@@ -14,11 +14,6 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <style>
-.detail {
-	margin-left: 90px;
-	margin-right: 90px;
-}
-
 .navbar-nav {
 	font-family: 'Pacifico', cursive;
 	font-weight: bold;
@@ -50,41 +45,49 @@
 }
 
 /* Set black background color, white text and some padding */
-footer {
-	background-color: #A4A4A4;
-	color: white;
-	padding: 15px;
-	background-color: #A4A4A4;
-}
-
 .fM {
 	font-family: 'Pacifico', cursive;
 }
 
+#ftitle {
+	margin: auto;
+	width: 90%;
+	font-size: 300%;
+	width: 90%;
+}
+
 #picNPrice {
 	position: relative;
-	overflow: auto;
+	height: 400px;
 }
 
 #thisPic {
+	margin: auto;
+	margin-left: 5%;
 	position: absolute;
 	float: left;
-	height: 300px;
-	margin-left: 90px;
-	margin-right: 30px;
-	margin-top: 40px;
-}
-
-#ftitle {
-	margin-left: 90px;
-	margin-right: 30px;
-	margin-top: 40px;
-	font-size: 300%;
+	width: 50%;
 }
 
 #fundingdetail {
-margin-left: 400px;
-	width: 300px;
+	margin-left: 60%;
+	margin-right: 5%;
+	width: 35%;
+}
+
+#detail {
+	margin: auto;
+	position: relative;
+	width: 90%;
+	position: relative;
+}
+
+footer {
+	position: relative;
+	background-color: #A4A4A4;
+	color: white;
+	padding: 15px;
+	background-color: #A4A4A4;
 }
 
 /* On small screens, set height to 'auto' for sidenav and grid */
@@ -96,24 +99,20 @@ margin-left: 400px;
 	.row.content {
 		height: auto;
 	}
-	#thisPic {
-		height: 200px;
-		margin-left: 50px;
-	}
-}
-
-@media ( max-width : 500px) {
-	.sidenav {
-		height: auto;
-		padding: 15px;
-	}
-	.row.content {
+	#picNPrice {
 		height: auto;
 	}
 	#thisPic {
-		margin-top: 20px;
-		margin-left: 30px;
-		height: 100px;
+		float: none;
+		position: relative;
+		margin-left: 5%;
+		margin-right: 5%;
+		width: 90%;
+	}
+	#fundingdetail {
+		position: relative;
+		margin: auto;
+		width: 90%;
 	}
 }
 </style>
@@ -188,12 +187,10 @@ margin-left: 400px;
 
 
 	<p class="fM" id="ftitle">${u.getTitle()}</p>
-
+	<br>
 	<div id="picNPrice">
-		<div id="picContainer">
-			<img id="thisPic"
-				src="${pageContext.request.contextPath}/resources/img/${u.getPhoto()}">
-		</div>
+		<img id="thisPic"
+			src="${pageContext.request.contextPath}/resources/img/${u.getPhoto()}">
 		<div id="fundingdetail">
 			<br> <br> <br>
 			<p class="fM">
@@ -214,10 +211,13 @@ margin-left: 400px;
 				${u.getPriceM()}원 후원하기</button>
 		</div>
 	</div>
+
 	<hr style="height: 10px;">
 
 
-	<div class="detail">${u.getContent()}</div>
+	<div id="detail">
+		<p>${u.getContent()}</p>
+	</div>
 
 	<footer class="container-fluid text-center" id="ft">
 		<p>(주) 영은찬 펀딩.</p>
