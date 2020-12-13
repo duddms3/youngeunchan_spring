@@ -205,7 +205,7 @@ footer {
 			<button id="myBtn" onclick="increaseCurrent('${u.getSeq()}')"> 후원하기 </button>
 		
 	</div>
-
+<br><br><br><br>
 	<hr style="height: 10px;"> <br> <br>
 		<br>
 

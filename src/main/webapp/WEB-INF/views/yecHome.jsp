@@ -135,7 +135,7 @@ footer {
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="#pro">Projects</a></li>
-					<li><a href="#ft">Contact</a></li>
+					<li><a href="#ct">Contact</a></li>
 					<li><a href="#" id="toWelcome">Sign Up</a></li>
 					<li><a href="../login/login" id="toLogout"><span
 							class="glyphicon glyphicon-log-in"></span> Login</a></li>
