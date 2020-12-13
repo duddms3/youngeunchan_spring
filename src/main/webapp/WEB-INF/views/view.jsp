@@ -28,7 +28,7 @@
 .navbar {
 	margin-bottom: 0;
 	border-radius: 0;
-	background-color: #01DF01;
+	background-color: #000000;
 	border: 0;
 	letter-spacing: 4px;
 	font-size: 20px !important;
@@ -40,13 +40,13 @@
 }
 
 .navbar-nav li a:hover {
-	color: black !important;
-	background-color: #F4FA58 !important;
+	color: white !important;
+	background-color: #A4A4A4 !important;
 }
 
 .navbar-nav li.active a {
 	color: white !important;
-	background-color: #01DF01 !important;
+	background-color: #000000 !important;
 }
 
 /* Set black background color, white text and some padding */
@@ -54,7 +54,6 @@ footer {
 	background-color: #A4A4A4;
 	color: white;
 	padding: 15px;
-	background-color: #A4A4A4;
 }
 
 .fM {
@@ -210,7 +209,7 @@ margin-left: 400px;
 			</p>
 			<br> <br> 후원 가격은 " ${u.getPriceM()} "원 입니다.
 
-			<button id="myBtn" class="btn btn-success btn-lg btn-block"
+			<button id="myBtn" class="btn btn-info btn-lg btn-block"
 				onclick="increaseCurrent('${u.getSeq()}')">
 				${u.getPriceM()}원 후원하기</button>
 		</div>
@@ -218,7 +217,7 @@ margin-left: 400px;
 	<hr style="height: 10px;">
 
 
-	<div class="detail">${u.getContent()}</div>
+	<div class="detail"><p>${u.getContent()}</p></div><br><br>
 
 	<footer class="container-fluid text-center" id="ft">
 		<p>(주) 영은찬 펀딩.</p>

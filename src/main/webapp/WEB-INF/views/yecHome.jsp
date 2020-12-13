@@ -25,7 +25,7 @@
 .navbar {
 	margin-bottom: 0;
 	border-radius: 0;
-	background-color: #01DF01;
+	background-color: #000000;
 	border: 0;
 	letter-spacing: 4px;
 	font-size: 20px !important;
@@ -37,13 +37,13 @@
 }
 
 .navbar-nav li a:hover {
-	color: black !important;
-	background-color: #F4FA58 !important;
+	color: white !important;
+	background-color: #A4A4A4 !important;
 }
 
 .navbar-nav li.active a {
 	color: white !important;
-	background-color: #01DF01 !important;
+	background-color: #000000 !important;
 }
 
 /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
@@ -78,19 +78,13 @@ footer {
 #pro {
 	margin-top: 20px;
 }
-
 #adBtn{
-	border-radius:4px;
-	background-color:#F2F5A9;
-	border:2.5px;
+	margin-top:10px;
 }
-#adBtn:hover{
-	background-color:#F8E0F7;
 
-}
 #one:hover {
 	cursor: pointer;
-	background-color: gray;
+	background-color: #F4F6F9;
 }
 </style>
 <script>
@@ -150,7 +144,7 @@ footer {
 	<div class="container-fluid text-center">
 		<div class="row content">
 			<div class="col-sm-2 sidenav">
-			<button id="adBtn" onclick="location.href='addPost'"> 후원 아이템 추가하기 </button>
+			<button id="adBtn" class="btn btn-info" onclick="location.href='addPost'"> 후원 아이템 추가하기 </button>
 			
 			</div>
 
@@ -159,6 +153,7 @@ footer {
 				<c:forEach items="${list}" var="u">
 					<div id="one"
 						onclick="javascript:location.href='view/${u.getSeq()}';">
+						<br>
 						<tr>
 							<td><img
 								src="${pageContext.request.contextPath}/resources/img/${u.getPhoto()}"
@@ -166,7 +161,7 @@ footer {
 								style="float: left; height: 150px; margin-right: 20px;"></td>
 
 							<td>${u.getTitle()}</td>
-							<br>
+							<br><br><br>
 							<td>목표 금액 : ${u.goalM}</td>
 							<br>
 							<td>마감 날짜 : ${u.magam}</td>
@@ -180,8 +175,7 @@ footer {
 						<tr>
 							<br>
 							<br>
-							<br>
-							<br>
+							
 							<td colspan="2"><hr></td>
 						</tr>
 					</div>

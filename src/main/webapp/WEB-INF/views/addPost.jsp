@@ -77,7 +77,7 @@ footer {
 	margin-top:20px;
 	font-family: 'Jua', sans-serif;
 	font-weight:bold;
-	color:#01DF01;
+	color:#579CE0;
 }
 #title:hover,#goalM:hover,#priceM:hover,#magam:hover,#lo:hover{
 	background-color: #edecec;
@@ -142,9 +142,8 @@ footer {
 			</tr><br><br>
 			
 		</table>
-		
-				<button type="button" class="btn btn-success" onclick="location.href='yechome'">등록 취소하기</button>
-				<input type="submit" value="게시글 등록하기" class="btn btn-success" id="sa" />
+				<button type="button" class="btn btn-info" onclick="location.href='yechome'">등록 취소하기</button>
+				<input type="submit" value="게시글 등록하기" class="btn btn-info" id="sa" />
 	</form>
 	</div>
 	<br><br><br>
