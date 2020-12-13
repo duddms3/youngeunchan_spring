@@ -20,7 +20,6 @@
 }
 
 .navbar-nav {
-
 	font-family: 'Pacifico', cursive;
 	font-weight: bold;
 	font-size: 20px;
@@ -55,14 +54,20 @@ footer {
 	background-color: #A4A4A4;
 	color: white;
 	padding: 15px;
+	background-color: #A4A4A4;
 }
-
 
 .fM {
 	font-family: 'Pacifico', cursive;
 }
 
+#picNPrice {
+	position: relative;
+	overflow: auto;
+}
+
 #thisPic {
+	position: absolute;
 	float: left;
 	height: 300px;
 	margin-left: 90px;
@@ -75,6 +80,11 @@ footer {
 	margin-right: 30px;
 	margin-top: 40px;
 	font-size: 300%;
+}
+
+#fundingdetail {
+margin-left: 400px;
+	width: 300px;
 }
 
 /* On small screens, set height to 'auto' for sidenav and grid */
@@ -106,7 +116,6 @@ footer {
 		height: 100px;
 	}
 }
-
 </style>
 </head>
 
@@ -129,7 +138,7 @@ footer {
 			if (userid != "") {
 				alert(userid);
 				document.getElementById("toLogout").innerHTML = "Logout";
-				document.getElementById("toLogout").href = "../login/logout";
+				document.getElementById("toLogout").href = "../../login/logout";
 				document.getElementById("toWelcome").innerHTML = "Welcome "
 						+ userid;
 			}
@@ -178,51 +187,45 @@ footer {
 	</nav>
 
 
-<p class="fM" id="ftitle">${u.getTitle()}</p>
-	<div id="picContainer">
-		<img id="thisPic"
-			src="${pageContext.request.contextPath}/resources/img/${u.getPhoto()}">
-	</div>
-	<div id="fundingdetail">
-		<br> <br> <br>
-		<p class="fM">
-			목표 후원 금액 :<strong>${u.getGoalM()}</strong>원
-		</p>
+	<p class="fM" id="ftitle">${u.getTitle()}</p>
 
-		<p class="fM">
-			현재 모인 금액 :<strong>${u.getCurrentM()}</strong>원
-		</p>
-
-		<p class="fM">
-			후원 마감 날짜 :<strong>${u.getMagam()}</strong>
-		</p>
-		<br>
-	<br>
-
-		후원 가격은 " ${u.getPriceM()} "원 입니다. <br> <br>
-			후원하시겠습니까?      
-
-			<button id="myBtn" onclick="increaseCurrent('${u.getSeq()}')"> 후원하기 </button>
-		
-	</div>
-
-	<hr style="height: 10px;"> <br> <br>
-		<br>
-
-		<div class="detail">
-			${u.getContent()} <br> <br> <br>
-			
-			<br> <br> <br>
+	<div id="picNPrice">
+		<div id="picContainer">
+			<img id="thisPic"
+				src="${pageContext.request.contextPath}/resources/img/${u.getPhoto()}">
 		</div>
+		<div id="fundingdetail">
+			<br> <br> <br>
+			<p class="fM">
+				목표 후원 금액 :<strong>${u.getGoalM()}</strong>원
+			</p>
 
-		<br> <br> <br>
-		<footer class="container-fluid text-center" id="ft">
-			<p>(주) 영은찬 펀딩.</p>
-			<p>-21700287 박은찬-</p>
-			<p>-21800123 김영은-</p>
-			
-		</footer>
-	
+			<p class="fM">
+				현재 모인 금액 :<strong>${u.getCurrentM()}</strong>원
+			</p>
+
+			<p class="fM">
+				후원 마감 날짜 :<strong>${u.getMagam()}</strong>
+			</p>
+			<br> <br> 후원 가격은 " ${u.getPriceM()} "원 입니다.
+
+			<button id="myBtn" class="btn btn-success btn-lg btn-block"
+				onclick="increaseCurrent('${u.getSeq()}')">
+				${u.getPriceM()}원 후원하기</button>
+		</div>
+	</div>
+	<hr style="height: 10px;">
+
+
+	<div class="detail">${u.getContent()}</div>
+
+	<footer class="container-fluid text-center" id="ft">
+		<p>(주) 영은찬 펀딩.</p>
+		<p>-21700287 박은찬-</p>
+		<p>-21800123 김영은-</p>
+
+	</footer>
+
 
 </body>
 </html>
